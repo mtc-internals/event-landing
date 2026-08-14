@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import type { City } from "@/types/event";
 
 const MAX_MATCH_DISTANCE_KM = 100;
-const ASKED_SESSION_KEY = "evento:geo-asked";
+const ASKED_SESSION_KEY = "HappnCity:geo-asked";
 
 function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): number {
   const toRad = (deg: number) => (deg * Math.PI) / 180;

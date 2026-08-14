@@ -1,10 +1,13 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AppRedirectDialog } from "@/components/shared/AppRedirectDialog";
 import { MobileNavSheet } from "@/components/layout/MobileNavSheet";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
-import { ORGANISER_APP_URL } from "@/lib/env";
+import logo from "@/app/logo.jpeg";
+// The organiser dashboard (event/frontend) isn't deployed yet, so "For
+// Organizers" doesn't redirect there for now. Restore once it's live:
+// import { ORGANISER_APP_URL } from "@/lib/env";
 
 export function Navbar() {
   return (
@@ -19,10 +22,8 @@ export function Navbar() {
       />
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-xl bg-gradient-brand text-white shadow-primary-glow">
-            <Sparkles className="size-4" />
-          </span>
-          <span className="text-lg font-bold tracking-tight">Evento</span>
+          <Image src={logo} alt="HappnCity" className="size-8 rounded-xl" priority />
+          <span className="text-lg font-bold tracking-tight">HappnCity</span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -32,12 +33,15 @@ export function Navbar() {
           >
             Explore Events
           </Link>
-          <a
-            href={ORGANISER_APP_URL}
-            className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-muted hover:text-foreground"
+          <span
+            aria-disabled
+            className="flex cursor-not-allowed items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-text-faint"
           >
             For Organizers
-          </a>
+            <span className="rounded-full bg-muted px-1.5 py-0.5 text-[0.65rem] font-semibold text-text-muted">
+              Soon
+            </span>
+          </span>
         </nav>
 
         <div className="flex items-center gap-2">

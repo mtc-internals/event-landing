@@ -10,7 +10,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/app-links";
+// Not on the App Store / Play Store yet, so these buttons are disabled
+// placeholders for now. Restore the real links once published:
+// import { APP_STORE_URL, PLAY_STORE_URL } from "@/lib/app-links";
 
 interface AppRedirectDialogProps {
   trigger: ReactElement;
@@ -27,34 +29,31 @@ export function AppRedirectDialog({ trigger, eventTitle }: AppRedirectDialogProp
             <Smartphone className="size-7" />
           </div>
           <DialogTitle className="text-center text-lg">
-            Continue in the Evento app
+            Continue in the HappnCity app
           </DialogTitle>
           <DialogDescription className="text-center text-balance">
             {eventTitle
-              ? `RSVPs and tickets for "${eventTitle}" are handled in the Evento app.`
-              : "Registering, RSVPs, and tickets are handled in the Evento mobile app."}{" "}
-            Download it to get going — it only takes a minute.
+              ? `RSVPs and tickets for "${eventTitle}" will be handled in the HappnCity app.`
+              : "Registering, RSVPs, and tickets will be handled in the HappnCity mobile app."}{" "}
+            We&apos;re putting the finishing touches on it — it&apos;ll be live on the App Store and Google
+            Play soon.
           </DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-2 sm:flex-row">
-          <a
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border-subtle bg-surface-elevated px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+          <span
+            aria-disabled
+            className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-lg border border-border-subtle bg-surface-elevated px-4 py-2.5 text-sm font-medium text-text-faint"
           >
             <Apple className="size-4" />
-            App Store
-          </a>
-          <a
-            href={PLAY_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border-subtle bg-surface-elevated px-4 py-2.5 text-sm font-medium transition-colors hover:bg-muted"
+            Coming soon
+          </span>
+          <span
+            aria-disabled
+            className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-lg border border-border-subtle bg-surface-elevated px-4 py-2.5 text-sm font-medium text-text-faint"
           >
             <PlayCircle className="size-4" />
-            Google Play
-          </a>
+            Coming soon
+          </span>
         </div>
       </DialogContent>
     </Dialog>

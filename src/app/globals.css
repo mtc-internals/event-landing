@@ -47,7 +47,7 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Evento brand — Electric Violet, ported from event/frontend */
+  /* HappnCity brand — Electric Violet, ported from event/frontend */
   --color-brand: var(--brand);
   --color-brand-hover: var(--brand-hover);
   --color-brand-50: var(--brand-50);
@@ -79,7 +79,7 @@
 }
 
 :root {
-  /* Brand — Electric Violet (Evento primary), full 50–900 scale */
+  /* Brand — Electric Violet (HappnCity primary), full 50–900 scale */
   --brand: hsl(248, 99%, 61%);
   --brand-hover: hsl(248, 96%, 51%);
   --brand-50: hsl(248, 100%, 97%);

@@ -11,7 +11,7 @@ const STEPS = [
   {
     icon: Smartphone,
     title: "RSVP in the app",
-    description: "Reserve your spot or grab a ticket in seconds using the Evento mobile app.",
+    description: "Reserve your spot or grab a ticket in seconds using the HappnCity mobile app.",
   },
   {
     icon: PartyPopper,
@@ -24,7 +24,7 @@ export function HowItWorks() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <ScrollReveal className="mb-10 text-center">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">How Evento works</h2>
+        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">How HappnCity works</h2>
         <AccentBar className="mx-auto" />
         <p className="mt-2 text-text-muted">Three steps between you and your next great event.</p>
       </ScrollReveal>

@@ -18,23 +18,9 @@ export default async function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 96,
-            height: 96,
-            borderRadius: 24,
-            background: "rgba(255,255,255,0.18)",
-            marginBottom: 32,
-          }}
-        >
-          <div style={{ fontSize: 56, display: "flex" }}>✨</div>
-        </div>
-        <div style={{ fontSize: 80, fontWeight: 800, color: "white", display: "flex" }}>Evento</div>
+        <div style={{ fontSize: 80, fontWeight: 800, color: "white", display: "flex" }}>HappnCity</div>
         <div style={{ fontSize: 30, color: "rgba(255,255,255,0.85)", marginTop: 16, display: "flex" }}>
-          Discover events happening near you
+          Be Where It Happens
         </div>
       </div>
     ),

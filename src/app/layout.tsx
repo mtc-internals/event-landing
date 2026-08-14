@@ -17,22 +17,22 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Evento — Discover events happening near you",
-    template: "%s | Evento",
+    default: "HappnCity — Be Where It Happens",
+    template: "%s | HappnCity",
   },
   description:
-    "Find tech meetups, workshops, concerts, and community events near you. Evento is the easiest way to discover and join what's happening in your city.",
+    "Find tech meetups, workshops, concerts, and community events near you. HappnCity is the easiest way to discover and join what's happening in your city.",
   openGraph: {
     type: "website",
-    siteName: "Evento",
-    title: "Evento — Discover events happening near you",
+    siteName: "HappnCity",
+    title: "HappnCity — Be Where It Happens",
     description:
       "Find tech meetups, workshops, concerts, and community events near you.",
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evento — Discover events happening near you",
+    title: "HappnCity — Be Where It Happens",
     description:
       "Find tech meetups, workshops, concerts, and community events near you.",
   },

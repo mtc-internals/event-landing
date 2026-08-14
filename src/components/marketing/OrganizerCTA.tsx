@@ -1,6 +1,9 @@
-import { ArrowRight, Building2 } from "lucide-react";
+import { Building2, Clock } from "lucide-react";
 import { ScrollReveal } from "@/components/marketing/ScrollReveal";
-import { ORGANISER_APP_URL } from "@/lib/env";
+// The organiser dashboard (event/frontend) isn't deployed yet, so this CTA
+// doesn't redirect there for now. Restore once it's live:
+// import { ArrowRight } from "lucide-react";
+// import { ORGANISER_APP_URL } from "@/lib/env";
 
 export function OrganizerCTA() {
   return (
@@ -22,15 +25,15 @@ export function OrganizerCTA() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/85">
             Create your organisation, list your event, and manage RSVPs, tickets, and check-ins — all from the
-            Evento organiser dashboard.
+            HappnCity organiser dashboard.
           </p>
-          <a
-            href={ORGANISER_APP_URL}
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand-700 shadow-soft transition-transform hover:scale-[1.03]"
+          <span
+            aria-disabled
+            className="mt-7 inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-brand-700 shadow-soft"
           >
-            Start hosting for free
-            <ArrowRight className="size-4" />
-          </a>
+            <Clock className="size-4" />
+            Organiser dashboard — coming soon
+          </span>
         </div>
       </ScrollReveal>
     </section>

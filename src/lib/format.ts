@@ -5,7 +5,7 @@
  * for display formatting since its local-time interpretation depends on the
  * host's system timezone and would silently shift the displayed time on a
  * server that isn't running in Asia/Kolkata. Parsing the parts manually
- * keeps this correct everywhere, matching the rest of the Evento codebase's
+ * keeps this correct everywhere, matching the rest of the HappnCity codebase's
  * "treat as literal IST" convention.
  */
 

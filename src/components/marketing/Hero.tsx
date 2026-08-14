@@ -2,38 +2,44 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 import { HeroDoodles } from "@/components/marketing/HeroDoodles";
 import { HeroPhotoCollage, type CollagePhoto } from "@/components/marketing/HeroPhotoCollage";
-import { getFeaturedEvents, getTrendingEvents } from "@/lib/api/events";
-import { CATEGORY_META, CATEGORY_ORDER, getCategoryMeta } from "@/lib/categories";
+import { CATEGORY_META, CATEGORY_ORDER } from "@/lib/categories";
 
-async function getCollagePhotos(): Promise<CollagePhoto[]> {
-  const [featured, trending] = await Promise.all([getFeaturedEvents(), getTrendingEvents(undefined, 8)]);
+// The photo collage is normally built from live events via event-backend.
+// The backend isn't deployed yet, so we render with no photos for now
+// (HeroPhotoCollage no-ops on an empty array). Restore this once it's live:
+//
+// import { getFeaturedEvents, getTrendingEvents } from "@/lib/api/events";
+// import { getCategoryMeta } from "@/lib/categories";
+//
+// async function getCollagePhotos(): Promise<CollagePhoto[]> {
+//   const [featured, trending] = await Promise.all([getFeaturedEvents(), getTrendingEvents(undefined, 8)]);
+//
+//   const photos: CollagePhoto[] = featured.map((event) => ({
+//     key: event.id,
+//     image: event.image_url,
+//     title: event.title,
+//     badge: `🔥 ${event.going_count} going`,
+//     color: getCategoryMeta(event.category).color,
+//   }));
+//
+//   for (const event of trending) {
+//     if (photos.length >= 4) break;
+//     if (!event.banner_url) continue;
+//     if (photos.some((p) => p.title === event.title)) continue;
+//     photos.push({
+//       key: String(event.id),
+//       image: event.banner_url,
+//       title: event.title,
+//       badge: event.city_name ? `📍 ${event.city_name}` : `${event.rsvp_count} going`,
+//       color: getCategoryMeta(event.category).color,
+//     });
+//   }
+//
+//   return photos.slice(0, 4);
+// }
 
-  const photos: CollagePhoto[] = featured.map((event) => ({
-    key: event.id,
-    image: event.image_url,
-    title: event.title,
-    badge: `🔥 ${event.going_count} going`,
-    color: getCategoryMeta(event.category).color,
-  }));
-
-  for (const event of trending) {
-    if (photos.length >= 4) break;
-    if (!event.banner_url) continue;
-    if (photos.some((p) => p.title === event.title)) continue;
-    photos.push({
-      key: String(event.id),
-      image: event.banner_url,
-      title: event.title,
-      badge: event.city_name ? `📍 ${event.city_name}` : `${event.rsvp_count} going`,
-      color: getCategoryMeta(event.category).color,
-    });
-  }
-
-  return photos.slice(0, 4);
-}
-
-export async function Hero() {
-  const photos = await getCollagePhotos();
+export function Hero() {
+  const photos: CollagePhoto[] = [];
   const quickCategories = CATEGORY_ORDER.slice(0, 5);
 
   return (
@@ -48,10 +54,12 @@ export async function Hero() {
 
         <div className="relative mx-auto max-w-xl text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-border-subtle bg-surface-elevated px-3 py-1 text-xs font-medium text-text-muted shadow-soft">
-            Now live across every major Indian city
+            Launching soon across India
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
+          <p className="mt-4 text-sm font-semibold tracking-wide text-brand">Be Where It Happens.</p>
+
+          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-balance sm:text-5xl">
             The events platform.
             <br />
             Where interests{" "}

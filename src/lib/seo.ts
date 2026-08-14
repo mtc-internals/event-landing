@@ -18,7 +18,7 @@ export function buildOrganizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Evento",
+    name: "HappnCity",
     url: absoluteUrl("/"),
   };
 }
@@ -27,7 +27,7 @@ export function buildWebsiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Evento",
+    name: "HappnCity",
     url: absoluteUrl("/"),
     potentialAction: {
       "@type": "SearchAction",
